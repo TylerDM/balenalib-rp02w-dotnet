@@ -31,4 +31,4 @@ jobs:
         with:
           push: true
           platforms: linux/arm64
-          tags: ghcr.io/${{ github.repository }}/balenalib-rp02w-dotnet:latest
+          tags: ghcr.io/tylerdm/balenalib-rp02w-dotnet:latest
