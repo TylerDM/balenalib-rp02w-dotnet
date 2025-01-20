@@ -27,11 +27,11 @@ RUN apk add --no-cache \
     ca-certificates \
     tzdata
 
-# Clean
-RUN rm -rf /var/cache/apk/*
-
 # Download and install .NET
 RUN curl -SL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh && \
     chmod +x dotnet-install.sh && \
-    ./dotnet-install.sh --channel $DOTNET_CHANNEL --version $DOTNET_VERSION --install-dir $DOTNET_ROOT --runtime $DOTNET_RUNTIME && \
-    rm dotnet-install.sh
+    ./dotnet-install.sh --channel $DOTNET_CHANNEL --version $DOTNET_VERSION --install-dir $DOTNET_ROOT --runtime $DOTNET_RUNTIME &&
+
+# Clean
+RUN rm -rf /var/cache/apk/*
+RUN rm dotnet-install.sh
